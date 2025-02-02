@@ -1,1 +1,1 @@
-# Emote.io
+# emote.io
