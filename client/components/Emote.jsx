@@ -3,9 +3,8 @@ import { io } from "socket.io-client";
 import { Card } from "@heroui/card";
 import { Button } from "@heroui/button";
 
-const socket = io(
-  "https://historic-rosalinda-abhishekpatel-97100a72.koyeb.app/"
-);
+// Use the environment variable correctly in Next.js
+const socket = io(process.env.NEXT_PUBLIC_API_URL);
 
 function Emote() {
   const [emoji, setEmoji] = useState("😏");
@@ -14,6 +13,10 @@ function Emote() {
     socket.on("new_emoji", (data) => {
       setEmoji(data);
     });
+
+    return () => {
+      socket.off("new_emoji"); // Cleanup listener
+    };
   }, []);
 
   return (
