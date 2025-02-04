@@ -1,1 +1,3 @@
 # emote.io
+
+project consists of a Next.js 15-based client and a Bun-powered Express server for real-time communication using Socket.io. The client, named "client", is built with React 19, Tailwind CSS, Framer Motion for animations, and @heroui/react for UI components. It uses Turbopack for optimized development. The server, named "emote.io", is a Bun-based backend running Express with Socket.io for real-time events. The Bun runtime is configured with an .env file and auto-restarts using --watch. This setup enables a high-performance full-stack application, leveraging modern JavaScript frameworks with optimized runtime efficiency from Bun.
